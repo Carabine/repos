@@ -1,0 +1,514 @@
+@import "resets";
+
+$main-bg: #9FBDD5;
+$dark: #223A4D;
+$content-bg: #269DFF;
+$dark-grey: #39444D;
+$light-grey: #5E7180;
+
+html {
+  background: $main-bg;
+  color: white;
+  font-family: sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  background: $main-bg;
+}
+
+.header-wrapper {
+  width: 100%;
+  background: $dark;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 5px;
+  max-width: 1000px;
+  margin: 0 auto
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.header a:hover {
+  color: $main-bg;
+}
+
+.header .MuiIconButton-root {
+  padding: 20px;
+  margin-right: auto;
+  display: none;
+}
+
+.content-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  background: $content-bg;
+  max-width: 1000px;
+  display: flex;
+}
+
+.content {
+  width: 75%;
+  padding: 10px;
+  min-height: 80vh;
+}
+
+.sidebar {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  border-right: 1px solid $dark;
+}
+
+.MuiDrawer-paper {
+  background-color: $content-bg !important;
+}
+
+.MuiDrawer-modal .sidebar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  border: none;
+}
+
+.MuiDrawer-modal .sidebar a {
+  padding: 5px 60px 5px 15px
+}
+
+.sidebar a {
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none
+}
+
+.sidebar a.active {
+  background: $dark-grey;
+}
+
+.sidebar a:hover {
+  background: $dark-grey;
+}
+
+.auth-page .content {
+  width: 100%;
+  padding: 5% 0;
+}
+
+.auth-page .content form button {
+  margin: 5px auto;
+  display: flex;
+  padding: 1px 30px;
+  font-size: 25px;
+  background: $dark;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  line-height: 35px;
+}
+
+.auth-page .content form input {
+  border: none;
+  padding: 3% 7%;
+  font-size: 20px;
+  border-radius: 5px;
+  color: $light-grey;
+  margin: 2px 0;
+  width: 100%;
+}
+
+.auth-page .content form input:focus {
+  outline: none
+}
+
+.auth-page .content form .input-container {
+  position: relative;
+}
+
+.auth-page .content form .input-container.error:after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url("https://i.ibb.co/j3XDVgd/error-icon.png");
+  background-size: cover;
+  top: calc(50% - 15px);
+  right: 7%;
+}
+
+.auth-page .content form .input-container.error input {
+  border: 2px solid red;
+}
+
+.auth-page .content form input::placeholder {
+  color: $light-grey;
+  text-transform: capitalize;
+}
+ 
+.form-item-container {
+  width: 250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-wrapper {
+  display: flex;
+}
+
+.content .first-column {
+  width: 30%;
+}
+
+.first-column .ava {
+  width: 100%;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding-top: 100%;
+}
+
+.first-column .ava-bg {
+  width: 100%;
+  background: white;
+}
+
+.content .second-column {
+  width: 70%;
+  padding: 0 2%;
+}
+.profile-data {
+  height: 200px;
+}
+.profile-wrapper .profile-name {
+  font-size: 30px;
+}
+
+.profile-wrapper .post-form {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.profile-wrapper .post-form textarea {
+  width: 100%;
+  height: 80px;
+  padding: 2%;
+  font-size: 20px;
+  border-radius: 5px;
+  color: $light-grey;
+}
+
+.profile-wrapper .post-form textarea::placeholder {
+  color: $light-grey;
+}
+
+.profile-wrapper .post-form textarea:focus{
+  outline: none;
+}
+
+.profile-wrapper .post-form button {
+  display: flex;
+  padding: 1px 30px;
+  font-size: 25px;
+  background: $dark;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px 0 5px auto;
+  line-height: 35px;
+}
+
+.profile-wrapper .post-form button:focus {
+  outline: none;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.posts .item {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  margin: 4% 0;
+  background: $light-grey;
+  position: relative;
+}
+
+.posts .item .ava-and-author {
+  display: flex;
+}
+
+.posts .item .ava-bg {
+  background: white;
+  margin: auto 0;
+  border-radius: 100%;
+}
+
+.posts .item .ava {
+  width: 40px;
+  height: 40px;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.posts .item .author {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.posts .item .body {
+  margin-top: 2%;
+}
+
+.posts .item .close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  right: 3%;
+  cursor: pointer;
+}
+
+.posts .item .close:hover {
+  opacity: 1;
+}
+
+.posts .item .close:before, .close:after {
+  position: absolute;
+  left: 9.3px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: $dark;
+}
+
+.posts .item .close:before {
+  transform: rotate(45deg);
+}
+
+.posts .item .close:after {
+  transform: rotate(-45deg);
+}
+
+.no-posts {
+  font-size: 30px;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.users-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.users-wrapper .item {
+  box-shadow: 0 0 10px $dark;
+  width: 30%;
+  margin: 1.5%;
+  padding: 2% 3%;
+}
+
+.users-wrapper .ava {
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.users-wrapper .ava-bg {
+  background: white;
+  border-radius: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.users-wrapper .username {
+  font-size: 25px;
+  text-align: center;
+  margin: auto;
+}
+
+.users-wrapper .item a {
+  font-size: 20px;
+  margin: 5% 10% 0;
+  padding: 1px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  background: $dark;
+  color: white;
+  text-decoration: none;
+}
+
+.users-page .navigator {
+  padding: 0 0.5%;
+}
+
+.users-page .navigator-item {
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  margin: 0 1%;
+}
+
+.users-page .navigator-item.active {
+  color: $dark
+}
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  height: 100%;
+  align-items: center;
+}
+
+.initializing .preloader {
+  height: 100vh;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.profile-status {
+  display: flex;
+}
+
+.profile-status form {
+  width: 100%;
+}
+
+.profile-status .form-item-container {
+  width: 100%;
+}
+
+.profile-status input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: none;
+  color: $light-grey;
+}
+
+.profile-status button {
+  display: flex;
+  margin-top: 10px;
+  padding: 1px 20px;
+  font-size: 18px;
+  background: $dark;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  line-height: 30px;
+}
+
+.profile-status button:hover {
+  background: $dark;
+}
+
+.posts .deleting {
+  opacity: 0.5
+}
+@media (max-width: 1000px) {
+  .users-wrapper .item {
+    width: 45%;
+    margin: 2.5%;
+  }
+  .users-wrapper .ava-bg {
+    width: 70%;
+  }
+}
+@media (max-width: 700px) {
+  .auth-page .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header {
+    padding: 0 5px;
+  }
+  .header a {
+    padding: 20px 0;
+  }
+  .header .MuiIconButton-root {
+    display: block;
+  }
+  .content-wrapper .sidebar {
+    display: none;
+  }
+  .content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-wrapper {
+    flex-direction: column;
+  }
+  .profile-wrapper .second-column{
+    width: 100%;
+  }
+  .profile-wrapper .post-form {
+    margin: 5% 0;
+  }
+  .profile-data {
+    height: auto;
+  }
+  .content .first-column {
+    width: 100%;
+    display: flex;
+    padding: 0 2%;
+  }
+  .content .first-column .ava-bg {
+    width: 40%;
+  }
+  .profile-wrapper .profile-data {
+    margin-left: 15px;
+  }
+  .no-posts {
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 430px) {
+  .content {
+    padding: 10px 0;
+  }
+  .users-wrapper .item {
+    width: 90%;
+    margin: 5%;
+    padding: 4% 3%;
+  }
+  .users-wrapper .ava-bg {
+    width: 60%;
+  }
+  .users-wrapper .item a {
+    padding: 2px 0;
+  }
+}
